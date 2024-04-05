@@ -1,0 +1,27 @@
+@use './mixins' as mixins;
+@use './brand-colors';
+
+@import 'bourbon';
+
+body {
+  background-color: var(--red-80);
+  @include mixins.flexbox;
+  @include mixins.flex-just(center);
+  @include padding(0);
+  @include margin(0);
+  overflow-x: hidden;
+
+  .container {
+    position: relative;
+    width: 80%;
+
+    @include margin(0 auto);
+
+    &:article {
+      width: max-content;
+
+      @include padding(0);
+      @include margin(0);
+    }
+  }
+}

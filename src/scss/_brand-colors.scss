@@ -1,0 +1,131 @@
+@import './functions';
+
+/*
+* Brand Colors System
+*/
+:root {
+  --black: #{hex-to-rgb(#000)};
+  --near-black: #{hex-to-rgb(#111)};
+  --dark-gray: #{hex-to-rgb(#333)};
+  --mid-gray: #{hex-to-rgb(#555)};
+  --gray: #{hex-to-rgb(#777)};
+  --silver: #{hex-to-rgb(#999)};
+  --light-silver: #{hex-to-rgb(#aaa)};
+  --moon-gray: #{hex-to-rgb(#ccc)};
+  --light-gray: #{hex-to-rgb(#eee)};
+  --near-white: #{hex-to-rgb(#f4f4f4)};
+  --white: #{hex-to-rgb(#fff)};
+  --red: #{hex-to-rgb(#b91933)};
+  --orange: #{hex-to-rgb(#f97316)};
+  --yellow: #{hex-to-rgb(#eab308)};
+  --purple: #{hex-to-rgb(#a855f7)};
+  --green: #{hex-to-rgb(#22c55e)};
+  --blue: #{hex-to-rgb(#3b82f6)};
+
+  --transparent: transparent;
+
+  //   Black
+  --black-90: rgba(var(--black), 0.9);
+  --black-80: rgba(var(--black), 0.8);
+  --black-70: rgba(var(--black), 0.7);
+  --black-60: rgba(var(--black), 0.6);
+  --black-50: rgba(var(--black), 0.5);
+  --black-40: rgba(var(--black), 0.4);
+  --black-30: rgba(var(--black), 0.3);
+  --black-20: rgba(var(--black), 0.2);
+  --black-10: rgba(var(--black), 0.1);
+  --black-05: rgba(var(--black), 0.05);
+  --black-025: rgba(var(--black), 0.025);
+  --black-0125: rgba(var(--black), 0.0125);
+  //   White
+  --white-90: rgba(var(--white), 0.9);
+  --white-80: rgba(var(--white), 0.8);
+  --white-70: rgba(var(--white), 0.7);
+  --white-60: rgba(var(--white), 0.6);
+  --white-50: rgba(var(--white), 0.5);
+  --white-40: rgba(var(--white), 0.4);
+  --white-30: rgba(var(--white), 0.3);
+  --white-20: rgba(var(--white), 0.2);
+  --white-10: rgba(var(--white), 0.1);
+  --white-05: rgba(var(--white), 0.05);
+  --white-025: rgba(var(--white), 0.025);
+  --white-0125: rgba(var(--white), 0.0125);
+  //   Red
+  --red-90: rgba(var(--red), 0.9);
+  --red-80: rgba(var(--red), 0.8);
+  --red-70: rgba(var(--red), 0.7);
+  --red-60: rgba(var(--red), 0.6);
+  --red-50: rgba(var(--red), 0.5);
+  --red-40: rgba(var(--red), 0.4);
+  --red-30: rgba(var(--red), 0.3);
+  --red-20: rgba(var(--red), 0.2);
+  --red-10: rgba(var(--red), 0.1);
+  --red-05: rgba(var(--red), 0.05);
+  --red-025: rgba(var(--red), 0.025);
+  --red-0125: rgba(var(--red), 0.125);
+  //   Orange
+  --orange-90: rgba(var(--orange), 0.9);
+  --orange-80: rgba(var(--orange), 0.8);
+  --orange-70: rgba(var(--orange), 0.7);
+  --orange-60: rgba(var(--orange), 0.6);
+  --orange-50: rgba(var(--orange), 0.5);
+  --orange-40: rgba(var(--orange), 0.4);
+  --orange-30: rgba(var(--orange), 0.3);
+  --orange-20: rgba(var(--orange), 0.2);
+  --orange-10: rgba(var(--orange), 0.1);
+  --orange-05: rgba(var(--orange), 0.05);
+  --orange-025: rgba(var(--orange), 0.025);
+  --orange-0125: rgba(var(--orange), 0.125);
+  //   Yellow
+  --yellow-90: rgba(var(--yellow), 0.9);
+  --yellow-80: rgba(var(--yellow), 0.8);
+  --yellow-70: rgba(var(--yellow), 0.7);
+  --yellow-60: rgba(var(--yellow), 0.6);
+  --yellow-50: rgba(var(--yellow), 0.5);
+  --yellow-40: rgba(var(--yellow), 0.4);
+  --yellow-30: rgba(var(--yellow), 0.3);
+  --yellow-20: rgba(var(--yellow), 0.2);
+  --yellow-10: rgba(var(--yellow), 0.1);
+  --yellow-05: rgba(var(--yellow), 0.05);
+  --yellow-025: rgba(var(--yellow), 0.025);
+  --yellow-0125: rgba(var(--yellow), 0.125);
+  //   Purple
+  --purple-90: rgba(var(--purple), 0.9);
+  --purple-80: rgba(var(--purple), 0.8);
+  --purple-70: rgba(var(--purple), 0.7);
+  --purple-60: rgba(var(--purple), 0.6);
+  --purple-50: rgba(var(--purple), 0.5);
+  --purple-40: rgba(var(--purple), 0.4);
+  --purple-30: rgba(var(--purple), 0.3);
+  --purple-20: rgba(var(--purple), 0.2);
+  --purple-10: rgba(var(--purple), 0.1);
+  --purple-05: rgba(var(--purple), 0.05);
+  --purple-025: rgba(var(--purple), 0.025);
+  --purple-0125: rgba(var(--purple), 0.125);
+  //   Green
+  --green-90: rgba(var(--green), 0.9);
+  --green-80: rgba(var(--green), 0.8);
+  --green-70: rgba(var(--green), 0.7);
+  --green-60: rgba(var(--green), 0.6);
+  --green-50: rgba(var(--green), 0.5);
+  --green-40: rgba(var(--green), 0.4);
+  --green-30: rgba(var(--green), 0.3);
+  --green-20: rgba(var(--green), 0.2);
+  --green-10: rgba(var(--green), 0.1);
+  --green-05: rgba(var(--green), 0.05);
+  --green-025: rgba(var(--green), 0.025);
+  --green-0125: rgba(var(--green), 0.125);
+  //   Blue
+  --blue-90: rgba(var(--blue), 0.9);
+  --blue-80: rgba(var(--blue), 0.8);
+  --blue-70: rgba(var(--blue), 0.7);
+  --blue-60: rgba(var(--blue), 0.6);
+  --blue-50: rgba(var(--blue), 0.5);
+  --blue-40: rgba(var(--blue), 0.4);
+  --blue-30: rgba(var(--blue), 0.3);
+  --blue-20: rgba(var(--blue), 0.2);
+  --blue-10: rgba(var(--blue), 0.1);
+  --blue-05: rgba(var(--blue), 0.05);
+  --blue-025: rgba(var(--blue), 0.025);
+  --blue-0125: rgba(var(--blue), 0.125);
+}
