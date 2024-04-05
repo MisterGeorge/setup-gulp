@@ -2,6 +2,7 @@ import gulp from 'gulp'
 import gulpSass from 'gulp-sass'
 import * as sass from 'sass'
 import autoprefixer from 'autoprefixer'
+import babel from 'gulp-babel'
 import bourbon from 'bourbon'
 import neat from 'bourbon-neat'
 import browserSync from 'browser-sync'
@@ -183,6 +184,7 @@ const optimizeJs = (srcPath, prefix) => {
   return gulp
     .src(srcPath)
     .pipe(plumber({ errorHandler: handleErrors }))
+    .pipe(babel())
     .pipe(uglify())
     .pipe(sourcemaps.init())
     .pipe(size({ gzip: true, showFiles: true }))
@@ -201,16 +203,9 @@ gulp.task('js', () => optimizeJs(paths.js, ''))
 gulp.task('lintJs', () => gulp.src([paths.js]).pipe(eslint()).pipe(eslint.format()).pipe(eslint.failAfterError()))
 
 /**
- * Process tasks and reload browsers.
+ * Process tasks.
  */
 gulp.task('watch', () => {
-  const files = [paths.sass]
-  browserSync.init(files, {
-    proxy: 'http://setup-gulp.dev/',
-    host: 3005,
-    open: true,
-    watchOptions: { debounceDelay: 1000 },
-  })
   gulp.watch(paths.font, gulp.series('fonts'))
   gulp.watch(paths.img, gulp.series('images'))
   gulp.watch(paths.jsComponents, gulp.series('jsComponents'))
@@ -219,6 +214,7 @@ gulp.task('watch', () => {
   gulp.watch(paths.sassComponents, gulp.series('sassComponents'))
   gulp.watch(paths.sassSections, gulp.series('sassSections'))
   gulp.watch(paths.sass, gulp.series('sass'))
+  browserSync.stream()
 })
 
 gulp.task(
