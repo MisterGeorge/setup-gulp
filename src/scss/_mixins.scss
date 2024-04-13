@@ -1,14 +1,4 @@
-// String Replace
-@function str-replace($string, $search, $replace: '') {
-  $index: str-index($string, $search);
-
-  @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace +
-      str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
-  }
-
-  @return $string;
-}
+@use './functions';
 
 // Font Face
 @mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
@@ -38,7 +28,7 @@
   }
 }
 
-// Usage: @include font($family: 'Arial', $size: 16px, $weight: 400, $color: #333);
+// Usage: @include font($family: 'Arial', $size: 16px, $weight: 400, $style: normal, $stretch: 100%, $color: #333, $lheight: normal, $lspacing: normal;
 @mixin font(
   $family: null,
   $size: null,
@@ -530,5 +520,40 @@
   }
   @keyframes #{$name} {
     @content;
+  }
+}
+
+@mixin background($color){
+  $color_without_hash: str-slice(to-string($color), 2);
+
+  .bg-#{$color_without_hash}{ 
+    background: #{$color};
+  }
+}
+
+@mixin heading($size) {
+  h1 {
+    font-size: $size;
+  }
+  h2 {
+    font-size: $size - 0.2;
+  }
+  h3 {
+    font-size: $size - 0.4;
+  }
+  h4 {
+    font-size: $size - 0.6;
+  }
+  h5 {
+    font-size: $size - 0.8;
+  }
+  h6{
+    font-size: $size - 1;
+  }
+}
+
+@mixin reset-last-child($prop: margin) {
+  &:last-child {
+    #{$prop}: 0;
   }
 }

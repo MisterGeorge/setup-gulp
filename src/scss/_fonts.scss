@@ -1,9 +1,9 @@
-// @font-face {
-//     font-family: 'Roboto';
-//     font-weight: 500;
-//     font-style: normal;
-//     src: url('../fonts/Roboto-Regular.ttf');
-//     src: local('Roboto'),
+@font-face {
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-style: normal;
+    src: url('../fonts/Roboto-Black.ttf');
+    src: local('Roboto'),
 //         url('../fonts/Roboto-Black.ttf') format('truetype'),
 //         url('../fonts/Roboto-BlackItalic.ttf') format('truetype'),
 //         url('../fonts/Roboto-Bold.ttf') format('truetype'),
@@ -16,9 +16,9 @@
 //         url('../fonts/Roboto-Regular.ttf') format('truetype'),
 //         url('../fonts/Roboto-Thin.ttf') format('truetype'),
 //         url('../fonts/Roboto-ThinItalic.ttf') format('truetype');
-// }
+}
 
-// $roboto-black        : 'Roboto Black', sans-serif;
+$roboto-black        : 'Roboto Black', sans-serif;
 // $roboto-black-italic : 'Roboto Black', sans-serif;
 // $roboto-bold         : 'Roboto', sans-serif;
 // $roboto-bold-italic  : 'Roboto', sans-serif;

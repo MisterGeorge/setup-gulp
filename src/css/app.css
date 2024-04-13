@@ -1,0 +1,334 @@
+@font-face {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-style: normal;
+  src: url("../fonts/Roboto-Black.ttf");
+  src: local("Roboto");
+}
+/*
+* Brand Colors System
+*/
+:root {
+  --black: 0, 0, 0;
+  --near-black: 17, 17, 17;
+  --dark-gray: 51, 51, 51;
+  --mid-gray: 85, 85, 85;
+  --gray: 119, 119, 119;
+  --silver: 153, 153, 153;
+  --light-silver: 170, 170, 170;
+  --moon-gray: 204, 204, 204;
+  --light-gray: 238, 238, 238;
+  --near-white: 244, 244, 244;
+  --white: 255, 255, 255;
+  --red: 185, 25, 51;
+  --orange: 249, 115, 22;
+  --yellow: 234, 179, 8;
+  --purple: 168, 85, 247;
+  --green: 34, 197, 94;
+  --blue: 59, 130, 246;
+  --transparent: transparent;
+  --black-90: rgba(var(--black), 0.9);
+  --black-80: rgba(var(--black), 0.8);
+  --black-70: rgba(var(--black), 0.7);
+  --black-60: rgba(var(--black), 0.6);
+  --black-50: rgba(var(--black), 0.5);
+  --black-40: rgba(var(--black), 0.4);
+  --black-30: rgba(var(--black), 0.3);
+  --black-20: rgba(var(--black), 0.2);
+  --black-10: rgba(var(--black), 0.1);
+  --black-05: rgba(var(--black), 0.05);
+  --black-025: rgba(var(--black), 0.025);
+  --black-0125: rgba(var(--black), 0.0125);
+  --gray-90: rgba(var(--gray), 0.9);
+  --gray-80: rgba(var(--gray), 0.8);
+  --gray-70: rgba(var(--gray), 0.7);
+  --gray-60: rgba(var(--gray), 0.6);
+  --gray-50: rgba(var(--gray), 0.5);
+  --gray-40: rgba(var(--gray), 0.4);
+  --gray-30: rgba(var(--gray), 0.3);
+  --gray-20: rgba(var(--gray), 0.2);
+  --gray-10: rgba(var(--gray), 0.1);
+  --gray-05: rgba(var(--gray), 0.05);
+  --gray-025: rgba(var(--gray), 0.025);
+  --gray-0125: rgba(var(--gray), 0.0125);
+  --red-90: rgba(var(--red), 0.9);
+  --red-80: rgba(var(--red), 0.8);
+  --red-70: rgba(var(--red), 0.7);
+  --red-60: rgba(var(--red), 0.6);
+  --red-50: rgba(var(--red), 0.5);
+  --red-40: rgba(var(--red), 0.4);
+  --red-30: rgba(var(--red), 0.3);
+  --red-20: rgba(var(--red), 0.2);
+  --red-10: rgba(var(--red), 0.1);
+  --red-05: rgba(var(--red), 0.05);
+  --red-025: rgba(var(--red), 0.025);
+  --red-0125: rgba(var(--red), 0.125);
+  --orange-90: rgba(var(--orange), 0.9);
+  --orange-80: rgba(var(--orange), 0.8);
+  --orange-70: rgba(var(--orange), 0.7);
+  --orange-60: rgba(var(--orange), 0.6);
+  --orange-50: rgba(var(--orange), 0.5);
+  --orange-40: rgba(var(--orange), 0.4);
+  --orange-30: rgba(var(--orange), 0.3);
+  --orange-20: rgba(var(--orange), 0.2);
+  --orange-10: rgba(var(--orange), 0.1);
+  --orange-05: rgba(var(--orange), 0.05);
+  --orange-025: rgba(var(--orange), 0.025);
+  --orange-0125: rgba(var(--orange), 0.125);
+  --yellow-90: rgba(var(--yellow), 0.9);
+  --yellow-80: rgba(var(--yellow), 0.8);
+  --yellow-70: rgba(var(--yellow), 0.7);
+  --yellow-60: rgba(var(--yellow), 0.6);
+  --yellow-50: rgba(var(--yellow), 0.5);
+  --yellow-40: rgba(var(--yellow), 0.4);
+  --yellow-30: rgba(var(--yellow), 0.3);
+  --yellow-20: rgba(var(--yellow), 0.2);
+  --yellow-10: rgba(var(--yellow), 0.1);
+  --yellow-05: rgba(var(--yellow), 0.05);
+  --yellow-025: rgba(var(--yellow), 0.025);
+  --yellow-0125: rgba(var(--yellow), 0.125);
+  --purple-90: rgba(var(--purple), 0.9);
+  --purple-80: rgba(var(--purple), 0.8);
+  --purple-70: rgba(var(--purple), 0.7);
+  --purple-60: rgba(var(--purple), 0.6);
+  --purple-50: rgba(var(--purple), 0.5);
+  --purple-40: rgba(var(--purple), 0.4);
+  --purple-30: rgba(var(--purple), 0.3);
+  --purple-20: rgba(var(--purple), 0.2);
+  --purple-10: rgba(var(--purple), 0.1);
+  --purple-05: rgba(var(--purple), 0.05);
+  --purple-025: rgba(var(--purple), 0.025);
+  --purple-0125: rgba(var(--purple), 0.125);
+  --green-90: rgba(var(--green), 0.9);
+  --green-80: rgba(var(--green), 0.8);
+  --green-70: rgba(var(--green), 0.7);
+  --green-60: rgba(var(--green), 0.6);
+  --green-50: rgba(var(--green), 0.5);
+  --green-40: rgba(var(--green), 0.4);
+  --green-30: rgba(var(--green), 0.3);
+  --green-20: rgba(var(--green), 0.2);
+  --green-10: rgba(var(--green), 0.1);
+  --green-05: rgba(var(--green), 0.05);
+  --green-025: rgba(var(--green), 0.025);
+  --green-0125: rgba(var(--green), 0.125);
+  --blue-90: rgba(var(--blue), 0.9);
+  --blue-80: rgba(var(--blue), 0.8);
+  --blue-70: rgba(var(--blue), 0.7);
+  --blue-60: rgba(var(--blue), 0.6);
+  --blue-50: rgba(var(--blue), 0.5);
+  --blue-40: rgba(var(--blue), 0.4);
+  --blue-30: rgba(var(--blue), 0.3);
+  --blue-20: rgba(var(--blue), 0.2);
+  --blue-10: rgba(var(--blue), 0.1);
+  --blue-05: rgba(var(--blue), 0.05);
+  --blue-025: rgba(var(--blue), 0.025);
+  --blue-0125: rgba(var(--blue), 0.125);
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--gray-10);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.wrapper {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+.wrapper__header {
+  margin-top: 2rem;
+}
+.wrapper .title {
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  font-family: "Roboto Black", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  font-style: var(--black);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.base, .heading, .colors {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 2rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  background: var(--white);
+  background: rgba(var(--white), 1);
+  -webkit-box-shadow: 0 10px 10px -15px var(--gray-60);
+  box-shadow: 0 10px 10px -15px var(--gray-60);
+  border-width: thin;
+  border-style: solid;
+  border-color: var(--gray-30);
+}
+
+.colors__content {
+  width: 5rem;
+  height: 5rem;
+  padding: 0;
+  margin: 0;
+}
+
+.heading {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.heading__paragraph {
+  width: 100%;
+  font-family: "Roboto Black", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  font-style: var(--black);
+  font-stretch: 0.8rem;
+  margin-bottom: 1rem;
+}
+.heading__ul {
+  margin-left: 1rem;
+}
+.heading__ul .ul__li {
+  list-style-type: square;
+  margin-bottom: 0.5rem;
+  font-family: "Roboto Black", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  font-style: var(--black);
+  font-stretch: 0.8rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  display: block;
+  width: 100%;
+  font-family: "Roboto Black", sans-serif;
+  font-weight: 500;
+  font-style: var(--black);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.8em;
+}
+
+h3 {
+  font-size: 1.6em;
+}
+
+h4 {
+  font-size: 1.4em;
+}
+
+h5 {
+  font-size: 1.2em;
+}
+
+h6 {
+  font-size: 1em;
+}
+
+.bg-purple-90 {
+  background: var(--purple);
+  background: rgba(var(--purple), 0.9);
+}
+
+.bg-purple-80 {
+  background: var(--purple);
+  background: rgba(var(--purple), 0.8);
+}
+
+.bg-purple-70 {
+  background: var(--purple);
+  background: rgba(var(--purple), 0.7);
+}
+
+.bg-purple-60 {
+  background: var(--purple);
+  background: rgba(var(--purple), 0.6);
+}
+
+.bg-purple-50 {
+  background: var(--purple);
+  background: rgba(var(--purple), 0.5);
+}
+
+.bg-purple-40 {
+  background: var(--purple);
+  background: rgba(var(--purple), 0.4);
+}
+
+.bg-purple-30 {
+  background: var(--purple);
+  background: rgba(var(--purple), 0.3);
+}
+
+.bg-purple-20 {
+  background: var(--purple);
+  background: rgba(var(--purple), 0.2);
+}
+
+.bg-purple-10 {
+  background: var(--purple);
+  background: rgba(var(--purple), 0.1);
+}
+
+.bg-purple-05 {
+  background: var(--purple);
+  background: rgba(var(--purple), 0.05);
+}
+
+.bg-purple-025 {
+  background: var(--purple);
+  background: rgba(var(--purple), 0.025);
+}
+
+.bg-purple-0125 {
+  background: var(--purple);
+  background: rgba(var(--purple), 0.0125);
+}

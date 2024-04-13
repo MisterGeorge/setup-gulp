@@ -1,3 +1,19 @@
 @function hex-to-rgb($hex) {
   @return red($hex), green($hex), blue($hex);
 }
+
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    $prefix: str-slice($string, 1, $index - 1);
+    $suffix: str-slice($string, $index + str-length($search));
+    @return #{$prefix}#{$replace}#{str-replace($suffix, $search, $replace)};
+  }
+
+  @return $string;
+}
+
+@function to-string($value) {
+  @return inspect($value);
+}

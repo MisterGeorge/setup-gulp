@@ -1,27 +1,149 @@
 @use './mixins' as mixins;
+@use './fonts' as fonts;
 @use './colors';
 
 @import 'bourbon';
 
+* {
+  @include mixins.box-sizing(border-box);
+  @include padding(0);
+  @include margin(0);
+}
+
 body {
-  background-color: var(--red-80);
+  background-color: var(--gray-10);
   @include mixins.flexbox;
   @include mixins.flex-just(center);
   @include padding(0);
   @include margin(0);
   overflow-x: hidden;
+}
 
-  .container {
-    position: relative;
-    width: 80%;
+.container {
+  position: relative;
+  width: 60%;
 
-    @include margin(0 auto);
+  @include margin(0 auto);
+}
 
-    &:article {
-      width: max-content;
+.wrapper {
+  position: relative;
+  @include mixins.flexbox();
+  @include mixins.flex-wrap(wrap);
+  @include mixins.align-items(center);
+  @include padding(null 2rem);
 
-      @include padding(0);
-      @include margin(0);
+  &__header {
+    @include margin(2rem null null null)
+  }
+
+  .title {
+    @include mixins.justify-content(flex-start);
+    @include mixins.font(fonts.$roboto-black, 1rem, 400, var(--black));
+    @include margin(1rem null);
+    text-align: left;
+  }  
+}
+
+.base {
+  position: relative;
+  width: 100%;
+  height: auto;
+  @include mixins.flexbox();
+  @include mixins.align-items(center);
+  @include padding(2rem);
+  @include margin(null null 1rem null);
+  @include mixins.border-radius (.5rem);
+  @include mixins.background-opacity(var(--white), 1);
+  @include mixins.box-shadow(0, 10px, 10px, -15px, var(--gray-60));
+  @include mixins.border('', thin, solid, var(--gray-30));
+}
+
+.colors {
+  @extend .base;
+
+  &__content {
+    width: 5rem;
+    height: 5rem;
+    @include padding(0);
+    @include margin(0);
+  }
+}
+
+.heading {
+  @extend .base;
+  @include mixins.flex-wrap(wrap);
+
+  &__paragraph {
+    width: 100%;
+    @include mixins.font(fonts.$roboto-black, 1rem, 400, var(--black), .8rem);
+    @include margin(null null 1rem null);
+  }
+  
+  &__ul {
+    @include margin(null null null 1rem);
+  
+    .ul__li {
+      list-style-type: square;
+      @include margin(null null .5rem null);
+      @include mixins.font(fonts.$roboto-black, 1rem, 400, var(--black), .8rem);
     }
   }
+}
+
+h1,h2,h3,h4,h5,h6 {
+  display: block;
+  width: 100%;
+  @include mixins.font(fonts.$roboto-black, null, 500, var(--black));
+  @include margin(null null 1rem null);
+}
+
+@include mixins.heading(2em);
+
+.bg-purple-90 {
+  @include mixins.background-opacity(var(--purple), 0.9);
+}
+
+.bg-purple-80 {
+  @include mixins.background-opacity(var(--purple), 0.8);
+}
+
+.bg-purple-70 {
+  @include mixins.background-opacity(var(--purple), 0.7);
+}
+
+.bg-purple-60 {
+  @include mixins.background-opacity(var(--purple), 0.6);
+}
+
+.bg-purple-50 {
+  @include mixins.background-opacity(var(--purple), 0.5);
+}
+
+.bg-purple-40 {
+  @include mixins.background-opacity(var(--purple), 0.4);
+}
+
+.bg-purple-30 {
+  @include mixins.background-opacity(var(--purple), 0.3);
+}
+
+.bg-purple-20 {
+  @include mixins.background-opacity(var(--purple), 0.2);
+}
+
+.bg-purple-10 {
+  @include mixins.background-opacity(var(--purple), 0.1);
+}
+
+.bg-purple-05 {
+  @include mixins.background-opacity(var(--purple), 0.05);
+}
+
+.bg-purple-025 {
+  @include mixins.background-opacity(var(--purple), 0.025);
+}
+
+.bg-purple-0125 {
+  @include mixins.background-opacity(var(--purple), 0.0125);
 }
