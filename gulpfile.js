@@ -31,12 +31,14 @@ const paths = {
   sassComponents: './src/scss/components/*.scss',
   sassSections: './src/scss/sections/*.scss',
   sass: './src/scss/*.scss',
+  css: './src/css/*.css',
   jsComponents: './src/js/components/*.ts',
   jsSections: './src/js/sections/*.ts',
   js: './src/js/*.ts',
   font: './src/fonts/**/*',
   img: './src/img/**/*.+(png|jpg|jpeg|gif|svg)',
   dest: './assets',
+  root: './index.html'
 }
 
 gulp.task('serve', (done) => {
@@ -45,9 +47,7 @@ gulp.task('serve', (done) => {
       baseDir: './',
     },
   })
-
-  gulp.watch(paths.sass, gulp.series('sassComponents', 'sassSections', 'sass')).on('change', browserSync.reload)
-  gulp.watch('./index.html').on('change', browserSync.reload)
+  gulp.watch(paths.root).on('change', browserSync.reload)
 
   done()
 })
@@ -75,7 +75,7 @@ function handleErrors() {
 /**
  * Clean compiled files.
  */
-gulp.task('cleanAssets', () => deleteAsync(['./assets/**', '!./assets']))
+gulp.task('cleanAssets', () => deleteAsync(['./assets/**', '!./assets', './src/css/**', '!./src/css']))
 
 /**
  * Compile Sass and run stylesheet through PostCSS.
@@ -83,20 +83,16 @@ gulp.task('cleanAssets', () => deleteAsync(['./assets/**', '!./assets']))
 const compileSass = (srcPath, prefix) => {
   return gulp.src(srcPath)
     .pipe(plumber({ errorHandler: handleErrors }))
-    .pipe(sourcemaps.init())
     .pipe(
       sassCompiler({
         includePaths: [].concat(bourbonPaths, neatPaths),
-        errLogToConsole: true,
-        outputStyle: 'compressed',
-        sourceMap: true,
+        errLogToConsole: true
       })
     )
     .pipe(postcss([autoprefixer()]))
     .pipe(size({ gzip: true, showFiles: true }))
-    .pipe(sourcemaps.write())
-    .pipe(rename({ prefix, suffix: '.min', dirname: '' }))
-    .pipe(gulp.dest(paths.dest))
+    .pipe(rename({ prefix, suffix: '', dirname: '' }))
+    .pipe(gulp.dest('./src/css'))
     .pipe(browserSync.stream())
 }
 
@@ -112,7 +108,7 @@ gulp.task('sass', () => {
   return merge(reset, scss)
     .pipe(plumber({ errorHandler: handleErrors }))
     .pipe(concat('styles.css'))
-    .pipe(compileSass(paths.sass))
+    .pipe(compileSass(paths.sass, ''))
 });
 
 /**
@@ -129,13 +125,14 @@ gulp.task('lintScss', () =>
 
 gulp.task('minifyCss', () =>
   gulp
-    .src(paths.sass)
+    .src(paths.css)
     .pipe(sourcemaps.init())
     .pipe(cleanCSS())
     .pipe(sourcemaps.write())
     .pipe(size({ gzip: true, showFiles: true }))
     .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest(paths.dest))
+    .pipe(browserSync.stream())
 )
 
 /**
@@ -214,6 +211,7 @@ gulp.task('watch', () => {
   gulp.watch(paths.sassComponents, gulp.series('sassComponents'))
   gulp.watch(paths.sassSections, gulp.series('sassSections'))
   gulp.watch(paths.sass, gulp.series('sass'))
+  gulp.watch(paths.css, gulp.series('minifyCss'))
   browserSync.stream()
 })
 
@@ -228,7 +226,8 @@ gulp.task(
     'js',
     'sassComponents',
     'sassSections',
-    'sass'
+    'sass',
+    'minifyCss'
   )
 )
 
