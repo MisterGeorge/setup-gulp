@@ -3,34 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Setup Gulp</title>
     <link rel="stylesheet" href="./assets/app.min.css" />
   </head>
   <body>
     <div class="container">
-      <article class="">
-        <div class="overflow-auto dtc-ns v-mid">
-          <h1 class="f1 lh-title">1 Heading</h1>
-          <h2 class="f2 lh-title">2 Heading</h2>
-          <h3 class="f3 lh-title">3 Heading</h3>
-          <h4 class="f4 lh-title">4 Heading</h4>
-          <h5 class="f5 lh-title">5 Heading</h5>
-          <h6 class="f6 lh-title">6 Heading</h6>
+      <div class="wrapper wrapper__header">
+        <div class="heading">
+          <h1>Setp-gulp</h1>
+          <p class="heading__paragraph">
+            Este repositorio contiene una configuración básica de Gulp y Sass para el desarrollo de temas 
+            personalizados en Shopify. La configuración proporcionada te permite compilar fácilmente 
+            archivos Sass en CSS, optimizar el código y ver los cambios en tiempo real gracias a BrowserSync.
+          </p>
+          <h5>Características</h5>
+          <ul class="heading__ul">
+            <li class="ul__li">Compilación automática de archivos Sass a CSS.</li>
+            <li class="ul__li">Autoprefijado de CSS para garantizar la compatibilidad con varios navegadores.</li>
+            <li class="ul__li">Minificación de archivos CSS para una carga más rápida de la página.</li>
+            <li class="ul__li">Observación de cambios en los archivos Sass y recarga automática del navegador con BrowserSync.</li>
+            <li class="ul__li">Configuración lista para integrarse con temas de Shopify.</li>
+          </ul>
         </div>
-        <div class="dtc-ns v-mid">
-          <pre class="overflow-auto ba b--black-05 pa2">
-                        <code class="db f6 pa3 lh-copy">
-                        .f1 { font-size: 3rem; }
-                        .f2 { font-size: 2.25rem; }
-                        .f3 { font-size: 1.5rem; }
-                        .f4 { font-size: 1.25rem; }
-                        .f5 { font-size: 1rem; }
-                        .f6 { font-size: .875rem; }
-                        </code>
-                    </pre>
+      </div>
+      <div class="wrapper">
+        <h3 class="title">Colors</h3>
+        <div class="colors">
+          <div class="colors__content bg-purple-90"></div>
+          <div class="colors__content bg-purple-80"></div>
+          <div class="colors__content bg-purple-70"></div>
+          <div class="colors__content bg-purple-60"></div>
+          <div class="colors__content bg-purple-50"></div>
+          <div class="colors__content bg-purple-40"></div>
+          <div class="colors__content bg-purple-30"></div>
+          <div class="colors__content bg-purple-20"></div>
+          <div class="colors__content bg-purple-10"></div>
+          <div class="colors__content bg-purple-05"></div>
+          <div class="colors__content bg-purple-025"></div>
+          <div class="colors__content bg-purple-0125"></div>
         </div>
-      </article>
+      </div>
+      <div class="wrapper">
+        <h3 class="title">Typography</h3>
+        <div class="heading">
+          <h1>h1. heading</h1>
+          <h2>h2. heading</h2>
+          <h3>h3. heading</h3>
+          <h4>h4. heading</h4>
+          <h5>h5. heading</h5>
+          <h6>h6. heading</h6>
+        </div>
+      </div>
     </div>
-    <!-- <script src="./assets/app.min.js"></script> -->
   </body>
 </html>
